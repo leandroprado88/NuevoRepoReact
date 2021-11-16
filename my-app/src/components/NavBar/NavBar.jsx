@@ -9,7 +9,7 @@ const NavBar = ()=> {
     return (
     <Navbar bg="light" expand="lg">
     <Container fluid>
-      <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+      <Navbar.Brand href="#">La Tienda del oeste</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav
@@ -17,14 +17,14 @@ const NavBar = ()=> {
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Nav.Link href="#action1">Home</Nav.Link>
-          <Nav.Link href="#action2">Link</Nav.Link>
-          <NavDropdown title="Link" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+          <Nav.Link href="#action1">Inicio</Nav.Link>
+          <Nav.Link href="#action2">Remeras</Nav.Link>
+          <NavDropdown title="Deportes" id="navbarScrollingDropdown">
+            <NavDropdown.Item href="#action3">Fútbol</NavDropdown.Item>
+            <NavDropdown.Item href="#action4">Running</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action5">
-              Something else here
+              Registrese
             </NavDropdown.Item>
           </NavDropdown>
         </Nav>
