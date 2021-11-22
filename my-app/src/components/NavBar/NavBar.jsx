@@ -40,4 +40,4 @@ const NavBar = ()=> {
 </Navbar>)
 }
 
-export default Navbar;
+export default NavBar;
