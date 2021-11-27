@@ -3,6 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 import Iconos from './Iconos';
 
 
@@ -18,13 +19,14 @@ const NavBar = ()=> {
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <Nav.Link href="#action1">Inicio</Nav.Link>
-        <Nav.Link href="#action2">Remeras</Nav.Link>
+        <Link to="/">Inicio</Link>
+        <Link to="/categorias/remeras">Remeras</Link>
+        <Link to="/categorias/shorts">Shorts</Link>
         <NavDropdown title="Deportes" id="navbarScrollingDropdown">
-          <NavDropdown.Item href="#action3">Fútbol</NavDropdown.Item>
-          <NavDropdown.Item href="#action4">Running</NavDropdown.Item>
+          <NavDropdown.Item href="#action4">Fútbol</NavDropdown.Item>
+          <NavDropdown.Item href="#action5">Running</NavDropdown.Item>
           <NavDropdown.Divider />
-          <NavDropdown.Item href="#action5">
+          <NavDropdown.Item href="#action6">
             Registrese
           </NavDropdown.Item>
         </NavDropdown>

@@ -3,13 +3,16 @@ import { getFetch } from '../../helpers/getFech';
 import ItemCount from '../ItemCount/ItemCount';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { useParams } from 'react-router-dom';
+
 
 
 function App() {
     const [products, setProducts] = useState([])  
     const [loading, setLoading] = useState(true)  
+    const { catIdParams } = useParams();
    
-  
+
     useEffect(() => {
         getFetch
         .then(data => { 
@@ -20,12 +23,12 @@ function App() {
         .finally(()=> setLoading(false))
         
     
-    },[]);
+    },[catIdParams]);
 
     function onAdd (cant) {
         console.log(cant);
     }
-  
+
     return (
     
         <div className="App">        
@@ -47,6 +50,6 @@ function App() {
             )}
        </div>
       );
-  }
+    }
 
   export default App;
