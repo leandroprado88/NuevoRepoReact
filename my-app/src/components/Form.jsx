@@ -2,8 +2,7 @@ import Boton from './NavBar/Boton';
 
 
 function Form ({ title, children, boton}){
-    console.log(boton);
-    console.log('Form');
+    
     return (
         <>
             

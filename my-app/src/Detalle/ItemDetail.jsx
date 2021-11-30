@@ -1,16 +1,17 @@
 import React from 'react';
-import ItemCount from '../ItemCount';
+import ItemCount from '../components/ItemCount/ItemCount';
 
-export const ItemDetail = ({item}) => {
-
+const ItemDetails = ({ item }) => {
+    
     return (
-
+        
          <div>
-            <img src={item.pictureURL} alt={item.title} />
-            <h3>{item.nombre}</h3>
-            <p>{item.precio}</p>
+            <img src={item.foto} alt={item.name} />
+            <h3>{item.name}</h3>
+            <p>{item.price}</p>
             <ItemCount stock={item.stock} id={item.id} />
         </div>
-
+                
     )
-};
+}
+export default ItemDetails;
