@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemDetail from '../../Detalle/ItemDetail';
-import getFetch from '../../helpers/getFetch';
+import { useState, useEffect } from 'react';
+import getFetch from './getFetch';
 import { useParams } from 'react-router-dom';
+import ItemList from './ItemList';
+
 
 
 const ItemListContainer = () => {
@@ -26,14 +26,17 @@ const ItemListContainer = () => {
           .catch(error =>{console.log(error);})
           .finally(()=>{setLoading(false)})
     }
-    }, [catIdParams]);
+    }, [catIdParams])
+    console.log(productos);
     
     
     return (
         <><div>
-       
-            {loading}
-            <ItemDetail item={productos}/>
+            {loading 
+                ? 
+            <h1>Cargando..</h1> 
+                : 
+            <ItemList  lista={productos}/> }
         </div></>
 
     )

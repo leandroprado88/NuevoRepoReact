@@ -2,7 +2,6 @@ import NavBar from './components/NavBar/NavBar';
 import ItemList from './components/ItemListContainer/ItemList';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Detalle/ItemDetailContainer';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 
 
@@ -23,8 +22,6 @@ function App() {
     );
     }
 
-    
-    
 
 
 export default App;

@@ -2,7 +2,7 @@ import React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 
-const Item = (item) => {
+const Item = ({item}) => {
     return (
         <><div>
             <div className="col">

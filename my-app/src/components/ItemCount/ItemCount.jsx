@@ -1,23 +1,22 @@
 import {useState} from "react"
 
 
-const ItemCount = ({initial, stock, onAdd}) => {
+const ItemCount = ({initialstock}) => {
     
     const [count, setCount] = useState (1)
 
     function Sumar() {
-        if (count < stock){
+        if (count < initialstock){
             setCount(count + 1)
         }
     }
     function Restar() {
-        if (count < stock && count > 0){
+        if (count > 0){
             setCount(count - 1)
         }
     }
-
+    console.log(count);
     function Agregar() {
-        onAdd(count)
         setCount(1)
     }
 
