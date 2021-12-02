@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import Iconos from './Iconos';
+import "./NavBar.css"
 
 
     const NavBar = () => {
@@ -11,13 +12,13 @@ import Iconos from './Iconos';
                   <Link to="/">INICIO</Link>
                   </li>
                   <li>
-                      <Link to="/categoria/buzos">Buzos</Link>
+                      <Link to="/categoria/Buzos">Buzos</Link>
                   </li>
                   <li>
-                      <Link to="/categoria/remmeras">Remeras</Link>
+                      <Link to="/categoria/Remeras">Remeras</Link>
                   </li>
                   <li>
-                      <Link to="/categoria/shorts">Shorts</Link>
+                      <Link to="/categoria/Shorts">Shorts</Link>
                   </li>
                   <li>
                      <Iconos />

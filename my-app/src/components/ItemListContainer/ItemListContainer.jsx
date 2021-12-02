@@ -14,18 +14,18 @@ const ItemListContainer = () => {
     useEffect(() => {
 
         if(catIdParams){
-        getFetch.then((data)=>{
-            setProductos(data.filter(prod => prod.categoria === catIdParams))
-        })
-          .catch((error)=>{console.log(error);})
-          .finally(()=>{setLoading(false)})
-      } else {
-        getFetch.then((data)=>{
-              setProductos(data)
-          })
-          .catch(error =>{console.log(error);})
-          .finally(()=>{setLoading(false)})
-    }
+            getFetch().then((data)=>{
+                setProductos(data.filter(prod => prod.categoria === catIdParams))
+            })
+              .catch((error)=>{console.log(error);})
+              .finally(()=>{setLoading(false)})
+          } else {
+            getFetch().then((data)=>{
+                  setProductos(data)
+              })
+              .catch(error =>{console.log(error);})
+              .finally(()=>{setLoading(false)})
+            }
     }, [catIdParams])
     console.log(productos);
     

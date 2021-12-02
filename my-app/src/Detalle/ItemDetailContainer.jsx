@@ -13,7 +13,7 @@ const ItemDetailContainer = () =>{
 
       useEffect(() => {
 
-          getFetch.then((prodEncontrado)=>{
+          getFetch().then((prodEncontrado)=>{
               setProductoIndividual(prodEncontrado.find(prod => prod.id === parseInt (itemIdParams))) 
           })
             .catch((error)=>{
