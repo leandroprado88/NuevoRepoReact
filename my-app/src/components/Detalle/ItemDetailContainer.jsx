@@ -1,8 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import getFetch from '../components/ItemListContainer/getFetch';
-import ItemDetails from '../Detalle/ItemDetails';
+import getFetch from '../../helpers/getFetch';
+import ItemDetails from './ItemDetails';
 
 
 const ItemDetailContainer = () =>{

@@ -3,6 +3,9 @@ import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 
 const Item = ({item}) => {
+
+
+    
     return (
         <><div>
             <div className="col">

@@ -1,8 +1,9 @@
-import {useState} from "react"
+import { useState } from "react"
 
 
 const ItemCount = ({initialstock}) => {
     
+  
     const [count, setCount] = useState (1)
 
     function Sumar() {
