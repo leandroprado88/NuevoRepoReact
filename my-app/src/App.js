@@ -3,13 +3,14 @@ import ItemList from './components/ItemListContainer/ItemList';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/Detalle/ItemDetailContainer';
 import {BrowserRouter,Routes,Route} from "react-router-dom";
-import { CartContext} from './components/Context/CartContext';
+import CartContextProvider from './components/Context/CartContext';
+import Cart from './components/Cart/Cart';
 
 
 function App() {
 
     return (
-        <CartContext.Provider value={{}}>
+        <CartContextProvider value={{}}>
         <BrowserRouter>
         
            <NavBar />
@@ -17,11 +18,12 @@ function App() {
             <Routes>
                 <Route exact path="/" element={<ItemListContainer />} />
                 <Route path="categoria/:catIdParams" element={<ItemListContainer />} />
-                <Route path="item/:itemIdParams" element={<ItemDetailContainer />} />
+                <Route path="detalle/:itemIdParams" element={<ItemDetailContainer />} />
+                <Route path="/cart" element={<Cart />} />
             </Routes>
 
         </BrowserRouter>
-        </CartContext.Provider>
+        </CartContextProvider>
     );
     }
 

@@ -5,6 +5,7 @@ import getFetch from '../../helpers/getFetch';
 import ItemDetails from './ItemDetails';
 
 
+
 const ItemDetailContainer = () =>{
     
     const [productoIndividual, setProductoIndividual]= useState({});
@@ -13,7 +14,7 @@ const ItemDetailContainer = () =>{
 
       useEffect(() => {
 
-          getFetch().then((prodEncontrado)=>{
+          getFetch.then((prodEncontrado)=>{
               setProductoIndividual(prodEncontrado.find(prod => prod.id === parseInt (itemIdParams))) 
           })
             .catch((error)=>{
@@ -32,8 +33,8 @@ const ItemDetailContainer = () =>{
             {loading 
                 ? 
             <h1>Cargando..</h1> 
-                : 
-            <ItemDetails item={productoIndividual}/> }
+                :            
+                <ItemDetails item={productoIndividual}/> }
         </div>
     </>
 

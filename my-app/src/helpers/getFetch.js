@@ -21,11 +21,10 @@ const productosLista = [
 ];
 
 
-const getFetch =() => {
-    return new Promise((resolve, reject)=>{
+const getFetch = new Promise((resolve, reject)=>{
         setTimeout(()=>{
             resolve(productosLista)
         }, 2000)
-    })}
+    })
 
 export default getFetch;

@@ -21,7 +21,10 @@ import "./NavBar.css"
                       <Link to="/categoria/Shorts">Shorts</Link>
                   </li>
                   <li>
-                     <Iconos />
+                    <Link to="/cart">
+                         <Iconos />
+                    </Link>
+
                   </li>
               </ul>
               

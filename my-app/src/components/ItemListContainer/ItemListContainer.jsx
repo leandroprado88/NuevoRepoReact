@@ -14,20 +14,20 @@ const ItemListContainer = () => {
     useEffect(() => {
 
         if(catIdParams){
-            getFetch().then((data)=>{
+            getFetch.then((data)=>{
                 setProductos(data.filter(prod => prod.categoria === catIdParams))
             })
               .catch((error)=>{console.log(error);})
               .finally(()=>{setLoading(false)})
           } else {
-            getFetch().then((data)=>{
+            getFetch.then((data)=>{
                   setProductos(data)
               })
               .catch(error =>{console.log(error);})
               .finally(()=>{setLoading(false)})
             }
     }, [catIdParams])
-    console.log(productos);
+    
     
     
     return (
