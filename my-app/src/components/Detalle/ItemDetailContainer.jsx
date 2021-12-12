@@ -1,9 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import getFetch from '../../helpers/getFetch';
 import ItemDetails from './ItemDetails';
-
+import { getFirestore } from '../../helpers/Firebase'
 
 
 const ItemDetailContainer = () =>{
@@ -11,12 +10,17 @@ const ItemDetailContainer = () =>{
     const [productoIndividual, setProductoIndividual]= useState({});
     const [loading, setLoading] = useState(true);
     const { itemIdParams } = useParams();
+    
+      
+    useEffect(() => {
 
-      useEffect(() => {
+        const db = getFirestore()
+        db.collection('items').doc(itemIdParams).get()
+        .then( res => {        
+        console.log('llamada a api') // alguna accion con la respuesta  
+            setProductoIndividual( {id: res.id, ...res.data()} )
+        })    
 
-          getFetch.then((prodEncontrado)=>{
-              setProductoIndividual(prodEncontrado.find(prod => prod.id === parseInt (itemIdParams))) 
-          })
             .catch((error)=>{
                 console.log(error);
             })
