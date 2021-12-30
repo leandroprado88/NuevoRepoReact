@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetails from './ItemDetails';
-import { getFirestore } from '../../helpers/Firebase'
+import {getFirestore} from '../../helpers/Firebase/firebase'
 
 
 const ItemDetailContainer = () =>{
@@ -15,20 +15,16 @@ const ItemDetailContainer = () =>{
     useEffect(() => {
 
         const db = getFirestore()
-        db.collection('items').doc(itemIdParams).get()
-        .then( res => {        
-        console.log('llamada a api') // alguna accion con la respuesta  
-            setProductoIndividual( {id: res.id, ...res.data()} )
-        })    
-
-            .catch((error)=>{
-                console.log(error);
+        const dbQuery = db.collection('Items')
+        dbQuery.doc(itemIdParams).get()
+            .then(res => {   
+                setProductoIndividual({ id: res.id, ...res.data() })
+                console.log(res);
             })
-            .finally(()=>{
-                setLoading(false)
-            }
-            )
-        }, [itemIdParams])
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false))
+         // eslint-disable-next-line 
+    },[itemIdParams])
      
     
     return (

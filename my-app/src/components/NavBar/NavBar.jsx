@@ -9,7 +9,7 @@ import "./NavBar.css"
           <nav id="navbar">
               <ul >
                   <li>
-                  <Link to="/">INICIO</Link>
+                  <Link to="/">Inicio</Link>
                   </li>
                   <li>
                       <Link to="/categoria/Buzos">Buzos</Link>

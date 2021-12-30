@@ -1,15 +1,19 @@
+import { useState } from 'react';
 import React from 'react';
 import { useCartContext } from '../Context/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetails = ({ item }) => {
     
-    const {cartList, agregarProducto } = useCartContext();
+    const [count, setCount] = useState(1)
+
+    const { cartList, agregarProducto } = useCartContext()
 
     function onAdd(cant) {
-        agregarProducto( { item: item , cantidad: cant} )
+        setCount(cant)
+        agregarProducto({  ...item, cantidad: cant})
     }
-    console.log(cartList);
+    console.log(cartList)
 
 
     return (
@@ -18,7 +22,7 @@ const ItemDetails = ({ item }) => {
             <img src={item.foto} alt={item.name} />
             <h3>{item.name}</h3>
             <p>{item.price}</p>
-            <ItemCount onAdd={()=>onAdd()} initialstock={item.stock} />
+            <ItemCount onAdd={onAdd} count={count} initialstock={item.stock}/>
         </div>
                 
     )
