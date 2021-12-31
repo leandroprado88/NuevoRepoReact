@@ -21,7 +21,7 @@ function CartContextProvider({ children }) {
     const precioFinal =()=>{
         return cartList.reduce((acum, valor)=>(acum + (valor.cantidad * valor.price)), 0) 
     }
-    const itemsCarrito =()=>{
+    const contadorItems =()=>{
         return cartList.reduce((acum, valor)=>(acum + (valor.cantidad * 1)), 0) 
     }
 
@@ -52,7 +52,7 @@ function CartContextProvider({ children }) {
             limpiarCarrito,
             precioFinal,
             cantidadProducto,
-            itemsCarrito
+            contadorItems
         }}>
             { children }
         </CartContext.Provider>

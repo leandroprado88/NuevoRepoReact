@@ -8,7 +8,7 @@ import ItemList from './ItemList';
 
 const ItemListContainer = () => {
 
-    const [Items, setProductos]= useState([]);
+    const [productos, setProductos]= useState([]);
     const [loading, setLoading] = useState(true);
     const { catIdParams } = useParams();
     
@@ -16,7 +16,7 @@ const ItemListContainer = () => {
         useEffect(() => {
         const db = getFirestore()
         const dbQuery = db.collection('Items') 
-        const dbQueryWhere =  catIdParams ? dbQuery.where('category', '==', catIdParams) : dbQuery
+        const dbQueryWhere =  catIdParams ? dbQuery.where('categoria', '==', catIdParams) : dbQuery
         dbQueryWhere.get()
         .then(data => setProductos(data.docs.map(item => ({ id: item.id, ...item.data() }))))
         .catch(err => console.log(err))
@@ -29,7 +29,7 @@ const ItemListContainer = () => {
                 ? 
             <h1>Cargando..</h1> 
                 : 
-            <ItemList  lista={Items}/> }
+            <ItemList  lista={productos}/> }
         </div></>
         )
 }

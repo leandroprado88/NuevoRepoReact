@@ -1,10 +1,14 @@
 
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../Context/CartContext';
 import Iconos from './Iconos';
 import "./NavBar.css"
 
 
     const NavBar = () => {
+    
+    const {contadorItems} = useCartContext()
+
       return (
           <nav id="navbar">
               <ul >
@@ -21,10 +25,7 @@ import "./NavBar.css"
                       <Link to="/categoria/Shorts">Shorts</Link>
                   </li>
                   <li>
-                    <Link to="/cart">
-                         <Iconos />
-                    </Link>
-
+                    <Link to="/cart">  <Iconos /> {contadorItems()}</Link>
                   </li>
               </ul>
               
